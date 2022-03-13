@@ -1,7 +1,5 @@
 package sample;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -63,9 +61,10 @@ public class SecondController implements Initializable {
 
         });
 
-        cancelButton.setOnAction((actionEvent) ->
+        // if user press cancel button
+        cancelButton.setOnAction(actionEvent ->
         {
-            returnValue = Optional.empty();     // an den exo tpt tote girizo null
+            returnValue = Optional.empty();     // if i have nothing then i return null
             ((Stage)(((Button)actionEvent.getSource()).getScene().getWindow())).close();
         });
     }
@@ -77,13 +76,13 @@ public class SecondController implements Initializable {
         String text2 = description.getText();
         LocalDate date = dateTask.getValue();
 
-        // to isEmpty elegxei an exo string
-        boolean emptyText = text.isEmpty() || text.trim().isEmpty();   // to trim afairei ta (spaces) ara me afto elegxo an exo dosei apla ena space i oxi
+        // isEmpty() is checking if i have any Strings
+        boolean emptyText = text.isEmpty() || text.trim().isEmpty();   // Using trim to delete all white spaces so i can check if user gave any input
         boolean emptyDesc = text2.isEmpty() || text2.trim().isEmpty();
         boolean emptyDate = dateTask.getValue() == null;
 
         if (!emptyText && !emptyDesc && !emptyDate) {
-            nextButtonName.setDisable(false);     // an den exo dosei kati i an exo dosei mono keno tote i apo pano metabliti ginetai true kai kano disable ta buttons mou
+            nextButtonName.setDisable(false);       // if any of these is empty then I set my nextButton to false so the user cannot continue
         }
         else
         {
@@ -94,18 +93,6 @@ public class SecondController implements Initializable {
     public void setAdder(Adder adder)
     {
         this.adder = adder;
-
-        List<Task> list = new ArrayList<>(this.adder.getTasks());
-
-        System.out.println("\nFrom setAdder\n");
-
-        for(Task value : list)
-        {
-            System.out.println(value.getName());
-        }
-
-        System.out.println("\nEnd of setAdder\n");
-
     }
 
 }

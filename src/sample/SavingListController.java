@@ -7,13 +7,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import todoList.Adder;
-import todoList.Task;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class SavingListController implements Initializable {
@@ -72,7 +73,7 @@ public class SavingListController implements Initializable {
         });
     }
 
-
+    //
     public boolean listFilesForFolder() {
 
         // taking my current Path
@@ -99,40 +100,17 @@ public class SavingListController implements Initializable {
     }
 
     private void saveTodoList() throws CloneNotSupportedException {
-//        this.adder = (Adder) adder.clone();
         // Serialization
-        try
+        File actualFile = new File(dir, fileName);
+        try ( FileOutputStream file = new FileOutputStream(actualFile);
+              ObjectOutputStream out = new ObjectOutputStream(file);)       //Saving an object in a file
         {
-            File actualFile = new File(dir, fileName);
-
-            //Saving of object in a file
-            FileOutputStream file = new FileOutputStream(actualFile);
-            ObjectOutputStream out = new ObjectOutputStream(file);
-
-            System.out.println("Mpika edo pera");
 
             if(adder == null)
-            {
-                System.out.println("Einai null");
-                out.close();
-                file.close();
                 return;
-            }
-            else
-            {
-                ArrayList<Task> list = adder.getTasks();
-
-                for(Task value : list)
-                {
-                    System.out.println(value.getName());
-                }
-                System.out.println("Den einai Null");
-            }
 
             // Method for serialization of object
             out.writeObject(adder);
-            out.close();
-            file.close();
 
             System.out.println("Object has been serialized");
         }
@@ -144,24 +122,16 @@ public class SavingListController implements Initializable {
 
     public void setAdder(Adder adder) throws CloneNotSupportedException {
         this.adder = (Adder) adder.clone();
-
-        ArrayList<Task> list = this.adder.getTasks();
-
-        for(Task value : list)
-        {
-            System.out.println(value.getName());
-        }
     }
 
     @FXML
     public void handleKeyReleased() {
         String text = saveName.getText();
 
-        // to isEmpty elegxei an exo string
-        boolean emptyText = text.isEmpty() || text.trim().isEmpty();   // to trim afairei ta (spaces) ara me afto elegxo an exo dosei apla ena space i oxi
+        boolean emptyText = text.isEmpty() || text.trim().isEmpty();
 
         if (!emptyText) {
-            saveButton.setDisable(false);     // an den exo dosei kati i an exo dosei mono keno tote i apo pano metabliti ginetai true kai kano disable ta buttons mou
+            saveButton.setDisable(false);
         }
         else
         {

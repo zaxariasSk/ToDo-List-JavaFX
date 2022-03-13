@@ -15,10 +15,8 @@ public class Adder implements Serializable, Cloneable {
 
         if(name != null && description != null && date != null)
         {
-//            System.out.println("Name: " + name + "\n" + "Description: " + description + "\n" + "Date: " + date.toString());
             task2.add(new Task(name,description, date));
         }
-//        System.out.println(tasks.size());
     }
 
 
@@ -29,17 +27,7 @@ public class Adder implements Serializable, Cloneable {
 
     public ArrayList<Task> getTasks()
     {
-        printList();
         return task2;
-//      return new ArrayList<>(task2);
-    }
-
-    public void printList() {
-        System.out.println("Mpika sti getTask");
-        for(Task value : task2)
-        {
-            System.out.println(value.getName());
-        }
     }
 
     @Override

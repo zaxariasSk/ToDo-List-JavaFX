@@ -1,3 +1,5 @@
+/* Each Task must have a name, a description and a date */
+
 package todoList;
 
 import java.io.Serial;
