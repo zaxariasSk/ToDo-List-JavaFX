@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="381.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SecondController">
+   <center>
+      <VBox prefHeight="90.0" prefWidth="175.0" spacing="4.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="28.0" prefWidth="530.0" text="Give Task's Name:" VBox.vgrow="ALWAYS" />
+            <TextField fx:id="taskName" onKeyReleased="#handleKeyReleased" prefHeight="26.0" prefWidth="338.0" promptText="Name...." />
+            <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="29.0" prefWidth="479.0" text="Give Description:" />
+            <TextArea fx:id="description" onKeyReleased="#handleKeyReleased" prefHeight="200.0" prefWidth="200.0" promptText="Description...." wrapText="true" />
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="486.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="25.0" prefWidth="205.0" text="Select Date:" />
+                  <Separator prefHeight="25.0" prefWidth="78.0" visible="false" />
+                  <DatePicker fx:id="dateTask" onAction="#handleKeyReleased" prefHeight="25.0" prefWidth="218.0" promptText="Date...." />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="338.0" spacing="10.0">
+               <children>
+                  <Separator prefHeight="31.0" prefWidth="164.0" visible="false" />
+                  <Button fx:id="nextButtonName" alignment="CENTER" cancelButton="true" defaultButton="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="Add">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Separator layoutX="10.0" layoutY="17.0" prefHeight="31.0" prefWidth="0.0" visible="false" />
+                  <Button fx:id="cancelButton" alignment="CENTER" cancelButton="true" mnemonicParsing="false" text="Cancel">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+   </center>
+   <top>
+      <VBox prefHeight="14.0" prefWidth="554.0" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <VBox prefHeight="302.0" prefWidth="31.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <VBox prefHeight="302.0" prefWidth="37.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

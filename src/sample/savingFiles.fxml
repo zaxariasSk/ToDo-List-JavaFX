@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="159.0" prefWidth="317.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SavingListController">
+   <center>
+      <VBox alignment="CENTER" prefHeight="54.0" prefWidth="317.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="saveButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="27.0" prefWidth="53.0" text="Save" />
+         </children></VBox>
+   </center>
+   <top>
+      <VBox prefHeight="110.0" prefWidth="317.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="30.0" prefWidth="268.0" text="Give a name for your Todo List">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin></Label>
+            <TextField fx:id="saveName" onKeyReleased="#handleKeyReleased" prefHeight="25.0" prefWidth="331.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin></TextField>
+         </children>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </VBox>
+   </top>
+</BorderPane>
