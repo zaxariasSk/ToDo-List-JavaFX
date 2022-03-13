@@ -8,13 +8,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import todoList.Adder;
-import todoList.Task;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -56,7 +53,7 @@ public class SecondController implements Initializable {
 
             adder.addNewTask(name, whatToDo, date);
 
-            returnValue = Optional.of(taskName.getText());      // bazo sto return ti timi tou taskName kai meta tin epistrefo sto proto controller
+            returnValue = Optional.of(taskName.getText());      // I return taskName value in Controller
             ((Stage)(((Button)actionEvent.getSource()).getScene().getWindow())).close();
 
         });

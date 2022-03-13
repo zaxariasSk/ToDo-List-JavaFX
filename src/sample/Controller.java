@@ -46,7 +46,6 @@ public class Controller {
         openFile.setOnAction(event -> {
             if(loadTodoList())
             {
-                // TODO na diorthoso to bug me to null. To problima einai oti to tempList den kanei sosta ti douleia tou
                 ArrayList<Task> tempList = new ArrayList<>();    // list for old Tasks
                 int flag = 0;
 
@@ -54,7 +53,6 @@ public class Controller {
                 {
                     tempList = adder.getTasks();
                     data.clear();
-//                    myList.setItems(data);          // TODO Na adeiaso tin myList mou logika paizo kai me to data
                     myList.getItems().removeAll();
                     flag = 1;
                 }
