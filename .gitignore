@@ -2,7 +2,7 @@
 /shelf/
 /.idea/workspace.xml
 .idea/sonarlint
-
+.idea/vcs.xml
 
 *.class
 
