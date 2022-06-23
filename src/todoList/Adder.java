@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Adder implements Serializable, Cloneable {
     @Serial
     private static final long serialVersionUID = 3569041702857111116L;
-    private static final ArrayList<Task> tasks = new ArrayList<>();     // TODO an afaireso kapoio stoixeio apo ti lista den to sbinei
+    private static final ArrayList<Task> tasks = new ArrayList<>();
     private ArrayList<Task> task2 = tasks;
 
     public void addNewTask(String name, String description, LocalDate date) {
