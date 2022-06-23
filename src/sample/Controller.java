@@ -82,7 +82,7 @@ public class Controller {
 
         addButton.setOnAction( actionEven -> {
 
-            FXMLLoader addNewItemLoader = new FXMLLoader(getClass().getResource("../fxml_files_ui/addNewTask.fxml"));
+            FXMLLoader addNewItemLoader = new FXMLLoader(getClass().getResource("/fxml_files_ui/addNewTask.fxml"));
             // Creating new stage to name it or to cancel it
             Stage newStage = new Stage();
 
@@ -162,7 +162,7 @@ public class Controller {
 
         if(!myList.getItems().isEmpty())        // if myList already has some tasks then i can save them
         {
-            FXMLLoader addNewItemLoader = new FXMLLoader(getClass().getResource("../fxml_files_ui/savingFiles.fxml"));
+            FXMLLoader addNewItemLoader = new FXMLLoader(getClass().getResource("/fxml_files_ui/savingFiles.fxml"));
             Stage savingStage = new Stage();
 
             try {
